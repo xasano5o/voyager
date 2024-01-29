@@ -1,0 +1,12 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.Container{
+    /* max-width: 1440px; */
+    padding: 0px 200px;
+    margin: 0 auto;
+    
+}
