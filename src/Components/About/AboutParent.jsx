@@ -1,10 +1,15 @@
-import React from 'react'
+import Busisnes from './Busisnes'
 import CaruselNav from './Carusel'
+import EXPERIENCE from './EXPERIENCE '
+import OurSer from './OurSer'
 
 const AboutCom = () => {
   return (
     <div>
-        <CaruselNav/>
+      <CaruselNav />
+      <EXPERIENCE />
+      <OurSer />
+      <Busisnes />
     </div>
   )
 }
