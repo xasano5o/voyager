@@ -5,7 +5,7 @@ import restanle3 from "../../assets/3.png"
 const EXPERIENCE = () => {
     return (
         <div>
-            <div className="w-[1024px] mt-12 flex-col justify-center items-center gap-[60px] inline-flex">
+            <div className=" w-[1024px] mt-12 flex-col justify-center items-center gap-[60px] inline-flex">
                 <div className="self-stretch justify-start items-center gap-7 inline-flex">
                     <div className="">
                         <img src={logo} alt="" className='h-12 w-[272px]' />
@@ -18,7 +18,7 @@ const EXPERIENCE = () => {
                     <img className="grow shrink basis-0 self-stretch" src={restanle3} />
                 </div>
                 <div className="w-[246px] h-[41px] px-2.5 bg-black justify-center items-center gap-5 inline-flex">
-                    <div className="grow shrink basis-0 text-center text-white text-[13px] font-semibold font-['Syne'] tracking-wide">EXPERIENCE THE VOYAGER</div>
+                    <button className="grow shrink basis-0 text-center text-white text-[13px] font-semibold font-['Syne'] tracking-wide">EXPERIENCE THE VOYAGER</button>
                 </div>
             </div>
         </div>
