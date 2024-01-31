@@ -1,25 +1,24 @@
 import React, { useState } from 'react'
-import OrderCom from './Order';
-
+import Order from './Order';
 const OrderTab = () => {
     const tabs = [
         {
             id: "One-way",
             label: "One-way",
             icon: '',
-            component: OrderCom,
+            component: Order,
         },
         {
             id: "Roundtrip",
             label: "Roundtrip",
             icon: '',
-            component: OrderCom,
+            component: 'Roundtrip',
         },
         {
             id: "Hourly",
             label: "Hourly",
             icon: '',
-            component: OrderCom,
+            component: "Hourly",
         },
     ];
     const [activeTab, setActiveTab] = useState("One-way");
