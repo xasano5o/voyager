@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const Busisnes = () => {
     return (
         <div>
-            <div className="mt-12 w-[1024px] flex-col justify-start items-center gap-[91px] inline-flex">
+            <div className="mt-12 w-full flex-col justify-start items-center gap-[91px] inline-flex">
                 <div className="justify-start items-start gap-[17px] inline-flex">
                     <div className="w-[515px] flex-col justify-start items-start gap-[50px] inline-flex">
                         <div className="self-stretch h-[74px] flex-col justify-start items-start gap-5 flex">
