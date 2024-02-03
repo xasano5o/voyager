@@ -41,6 +41,8 @@ export default function Modal({
         <p onClick={closeModal} className="cursor-pointer hover:text-red-500 duration-150 text-lg">
           ✖︎
         </p>
+
+        
       </div>
       {children}
     </div>

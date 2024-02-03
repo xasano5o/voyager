@@ -1,6 +1,6 @@
 import Line from "../../assets/icon/Bus Location 1 1.png"
 import Vecto from "../../assets/icon/Vector.png"
-
+import Vector from "../../assets/icon/Vector (2).png"
 
 
 const CaruselNav = () => {
@@ -21,7 +21,7 @@ const CaruselNav = () => {
           </div>
           <div className="    absolute top-[30px] left-[150px]   ">
             <img className=" fade-in-from-top" src={Line} alt="Line" />
-            <img className="rotate-360  absolute bottom-[80px]  right-[230px]  " src={Vecto} alt="Vecto" />
+            <img className="rotate-390line  absolute bottom-[80px]  right-[230px]  " src={Vector} alt="Vecto" />
           </div>
         </div>
       </div>
