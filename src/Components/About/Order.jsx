@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { FaSearch } from "react-icons/fa";
 import { BsCalendarDate } from "react-icons/bs";
 import { IoTimeSharp } from "react-icons/io5";
@@ -44,12 +44,12 @@ const Order = () => {
     const [modal, setModal] = useState(false)
 
 
-    const handleInputChange = (e) => {
+    const handleInputChange = () => {
         setDropdownOpen(true);
         setDropdownOpen2(false)
     };
 
-    const handleInputChange2 = (e) => {
+    const handleInputChange2 = () => {
         setDropdownOpen2(true);
         setDropdownOpen(false)
     };
@@ -67,7 +67,7 @@ const Order = () => {
 
     return (
         <div className='mt-12'>
-            <div class="flex-col sm:flex-row p-2.5 border border-neutral-400 justify-between items-center inline-flex" role="group">
+            <div class="" role="group">
                 <button
                     onClick={() => { setActiveButton('One-way'); }}
                     type="button"
