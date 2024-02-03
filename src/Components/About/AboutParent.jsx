@@ -10,12 +10,12 @@ const AboutCom = () => {
   return (
     <div className='container mx-auto'>
       <CaruselNav />
- <Order/>
+      <Order />
       <EXPERIENCE />
       <OurSer />
       <Busisnes />
-      <Logoes/>
-      <Footer/>
+      <Logoes />
+      <Footer />
     </div>
   )
 }
