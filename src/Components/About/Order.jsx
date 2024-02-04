@@ -1,4 +1,4 @@
-import  { useState } from 'react'
+import { useState } from 'react'
 import { FaSearch } from "react-icons/fa";
 import { BsCalendarDate } from "react-icons/bs";
 import { IoTimeSharp } from "react-icons/io5";
@@ -67,7 +67,7 @@ const Order = () => {
 
     return (
         <div className='mt-12'>
-            <div className="" role="group">
+            <div className="group-button" role="group">
                 <button
                     onClick={() => { setActiveButton('One-way'); }}
                     type="button"
@@ -212,7 +212,7 @@ const Order = () => {
 
 
                             </div>
-      
+
                         </Modal>
                     }
 
