@@ -109,6 +109,13 @@
     .Container {
         padding: 0px 50px;
     }
+    .mobile-carusel{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        height: 500px;
+        gap: 0px;
+    }
 }
 
 @media screen and (max-width:740px) {
@@ -116,5 +123,6 @@
         display: none;
 
     }
+
 
 }
