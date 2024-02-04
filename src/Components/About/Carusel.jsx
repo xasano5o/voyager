@@ -16,11 +16,11 @@ const CaruselNav = () => {
 
         <div className="flex relative">
           <div className="  absolute  z-10">
-            <img className="   fade-in-from-top" src={Line} alt="Line" />
+            <img className="   " src={Line} alt="Line" />
             <img className="rotate-360  z-10 absolute bottom-[80px]  right-[230px]  " src={Vecto} alt="Vecto" />
           </div>
           <div className="    absolute top-[30px] left-[150px]   ">
-            <img className=" fade-in-from-top" src={Line} alt="Line" />
+            <img className=" " src={Line} alt="Line" />
             <img className="rotate-390line  absolute bottom-[80px]  right-[230px]  " src={Vector} alt="Vecto" />
           </div>
         </div>
