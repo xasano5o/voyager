@@ -39,7 +39,7 @@ const data = [
 const Order = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isDropdownOpe2, setDropdownOpen2] = useState(false);
-    const [activeButton, setActiveButton] = useState(null);
+    const [activeButton, setActiveButton] = useState('One-way');
     const [addres, setAddres] = useState()
     const [modal, setModal] = useState(false)
 
@@ -67,12 +67,12 @@ const Order = () => {
 
     return (
         <div className='mt-12'>
-            <div class="" role="group">
+            <div className="" role="group">
                 <button
                     onClick={() => { setActiveButton('One-way'); }}
                     type="button"
                     className={`inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent 
-              focus:z-10 ${activeButton === 'One-way' ? 'bg-gray-950 text-white' : ''} dark:hover:text-white`}
+              focus:z-10 ${activeButton === 'One-way' ? 'bg-gray-900 text-white' : ''} dark:hover:text-white`}
                 >
                     One-way
                 </button>
@@ -81,7 +81,7 @@ const Order = () => {
                     onClick={() => { setActiveButton('Roundtrip'); }}
                     type="button"
                     className={`inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent 
-              focus:z-10 ${activeButton === 'Roundtrip' ? 'bg-gray-950 text-white' : ''} `}
+              focus:z-10 ${activeButton === 'Roundtrip' ? 'bg-gray-900 text-white' : ''} `}
                 >
                     Roundtrip
                 </button>
@@ -90,12 +90,10 @@ const Order = () => {
                     onClick={() => { setActiveButton('Hourly'); }}
                     type="button"
                     className={`inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent 
-              focus:z-10 ${activeButton === 'Hourly' ? 'bg-gray-950 text-white' : ''} dark:hover:text-white`}
+              focus:z-10 ${activeButton === 'Hourly' ? 'bg-gray-900 text-white' : ''} dark:hover:text-white`}
                 >
                     Hourly
                 </button>
-
-
             </div>
             <div className="w-full h-[148px] flex-col justify-start items-start gap-[30px] inline-flex">
 
@@ -214,10 +212,7 @@ const Order = () => {
 
 
                             </div>
-                            <div>
-                                <button>sumbit</button>
-                                <button>sumbit</button>
-                            </div>
+      
                         </Modal>
                     }
 
