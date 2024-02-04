@@ -82,3 +82,8 @@
     border: 1px solid black;
     width: 275px;
 }
+
+.bground {
+    background: black  !important;
+  color: white !important;
+}

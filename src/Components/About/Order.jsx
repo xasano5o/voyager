@@ -72,7 +72,7 @@ const Order = () => {
                     onClick={() => { setActiveButton('One-way'); }}
                     type="button"
                     className={`inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent 
-              focus:z-10 ${activeButton === 'One-way' ? 'bg-gray-900 text-white' : ''} dark:hover:text-white`}
+              focus:z-10 ${activeButton === 'One-way' ? 'bground' : ''} dark:hover:text-white`}
                 >
                     One-way
                 </button>
@@ -81,7 +81,7 @@ const Order = () => {
                     onClick={() => { setActiveButton('Roundtrip'); }}
                     type="button"
                     className={`inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent 
-              focus:z-10 ${activeButton === 'Roundtrip' ? 'bg-gray-900 text-white' : ''} `}
+              focus:z-10 ${activeButton === 'Roundtrip' ? 'bground' : ''} `}
                 >
                     Roundtrip
                 </button>
@@ -90,7 +90,7 @@ const Order = () => {
                     onClick={() => { setActiveButton('Hourly'); }}
                     type="button"
                     className={`inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent 
-              focus:z-10 ${activeButton === 'Hourly' ? 'bg-gray-900 text-white' : ''} dark:hover:text-white`}
+              focus:z-10 ${activeButton === 'Hourly' ? 'bground' : ''} dark:hover:text-white`}
                 >
                     Hourly
                 </button>
