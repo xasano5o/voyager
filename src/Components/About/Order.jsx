@@ -64,7 +64,23 @@ const Order = () => {
     }
     const currentDate = new Date().toISOString().split('T')[0];
     const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false }).slice(0, 5);
-
+   
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs
+          .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
+            publicKey: 'YOUR_PUBLIC_KEY',
+          })
+          .then(
+            () => {
+              console.log('SUCCESS!');
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
+          );
+      };
     return (
         <div className='mt-12'>
             <div className="group-button" role="group">

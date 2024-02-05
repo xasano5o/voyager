@@ -109,7 +109,8 @@
     .Container {
         padding: 0px 50px;
     }
-    .mobile-carusel{
+
+    .mobile-carusel {
         display: flex !important;
         flex-direction: column-reverse !important;
         align-items: center !important;
@@ -124,5 +125,14 @@
 
     }
 
+    .rotate-360 {
+        left: 200px;
+        top: 20px;
+    }
+
+    .rotate-360line {
+        right: 330px;
+        top: 20px;
+    }
 
 }
