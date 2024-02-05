@@ -89,7 +89,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex gap-4">
-                    <div className="mobile-nav-btn w-[121px] h-[29px] px-2.5  border border-zinc-800 justify-center items-center gap-5 inline-flex">
+                    <div className="hidden md:block mobile-nav-btn w-[121px] h-[29px] px-2.5  border border-zinc-800 justify-center items-center gap-5 inline-flex">
                         <div className="grow shrink basis-0 text-center  text-[11px] font-semibold font-['Syne'] tracking-wide">CONTACT</div>
                     </div>
                     <div className="nav-hamburger">

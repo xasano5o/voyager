@@ -6,13 +6,13 @@ const EXPERIENCE = () => {
     return (
         <div>
             <div className=" w-full mt-12 flex-col justify-center items-center gap-[60px] inline-flex">
-                <div className="self-stretch justify-start items-center gap-7 inline-flex">
-                    <div className="">
+                <div className="grid grid-cols-1 self-stretch justify-start items-center gap-7 md:inline-flex">
+                    <div className="mt-12 md:mt-0">
                         <img src={logo} alt="" className='h-12 w-[272px]' />
                     </div>
                     <div className="grow shrink basis-0 text-black text-base font-normal font-['Syne']">commited to delivering exceptional service that reflects our core values of  trust, discretion and modern tradition, we are pleased to unveil our new brand indentity designed to  elevate your journey.</div>
                 </div>
-                <div className="self-stretch grow shrink basis-0 justify-start items-start gap-[38px] inline-flex">
+                <div className="grid grid-cols-1 self-stretch grow shrink basis-0 justify-start items-start gap-[38px] md:inline-flex">
                     <img className="grow shrink basis-0 self-stretch" src={restanle1} />
                     <img className="grow shrink basis-0 self-stretch" src={restanle2} />
                     <img className="grow shrink basis-0 self-stretch" src={restanle3} />

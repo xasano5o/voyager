@@ -6,8 +6,8 @@ const Busisnes = () => {
     return (
         <div>
             <div className="mt-12 w-full flex-col justify-start items-center gap-[91px] inline-flex">
-                <div className="justify-start items-start gap-[17px] inline-flex">
-                    <div className="w-[515px] flex-col justify-start items-start gap-[50px] inline-flex">
+                <div className="w-full justify-start items-start gap-[17px] grid grid-cols-1 md:inline-flex">
+                    <div className="md:w-[515px] flex-col justify-start items-start gap-[50px] inline-flex">
                         <div className="self-stretch h-[74px] flex-col justify-start items-start gap-5 flex">
                             <div className="w-[272px] h-10 relative">
                                 <img src={logo} alt="" />
@@ -20,11 +20,11 @@ const Busisnes = () => {
                             <Link to="/" className="text-black text-base font-medium font-['Syne'] underline tracking-wide">Learn more</Link>
                         </div>
                     </div>
-                    <div className="w-[492px] h-[300px] justify-start items-center gap-[58px] flex">
+                    <div className="md:w-[492px] h-[300px] justify-start items-center gap-[58px] flex">
                         <img className="grow shrink basis-0 self-stretch" src={restanle7} />
                     </div>
                 </div>
-                <div className="w-[246px] h-[41px] px-2.5 bg-black justify-center items-center gap-5 inline-flex">
+                <div className="mb-12 md:mb-0 w-[246px] h-[41px] px-2.5 bg-black justify-center items-center gap-5 inline-flex">
                     <button className="grow shrink basis-0 text-center text-white text-[13px] font-semibold font-['Syne'] tracking-wide">GET STARTED</button>
                 </div>
             </div>

@@ -97,10 +97,10 @@ const Order = () => {
             </div>
             <div className="w-full h-[148px] flex-col justify-start items-start gap-[30px] inline-flex">
 
-                <div className="   relative w-full h-[73px] justify-start items-end gap-6 inline-flex">
+                <div className=" grid grid-cols-2 relative w-full h-[73px] justify-start items-end gap-6 md:inline-flex">
                     <div className="grow shrink basis-0 flex-col justify-start items-start gap-2.5 inline-flex">
                         <div className="w-[250.07px] h-[13.69px] text-zinc-500 text-[15px] font-semibold font-['Syne']">Pickup address</div>
-                        <div className="w-[240.04px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
+                        <div className="w-[150px] md:w-[240.04px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
                             <FaSearch />
                             <input value={addres} type="text" className="w-full outline-none text-zinc-500 text-[10px] font-semibold font-['Syne'] bg-transparent" placeholder='Pickup location'
                                 onFocus={() => handleInputChange()}
@@ -132,7 +132,7 @@ const Order = () => {
                     <div className=" flex-col justify-start items-start gap-2.5 inline-flex">
                         <div className="w-[146.43px] h-[13.69px] text-zinc-500 text-[15px] font-semibold font-['Syne']">Dropoff address</div>
 
-                        <div onFocus={() => handleInputChange2()} className="w-[197.04px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
+                        <div onFocus={() => handleInputChange2()} className="w-[150px] md:w-[197.04px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
                             <FaSearch />
                             <input
                                 value={addres}
@@ -149,6 +149,7 @@ const Order = () => {
                                     <div className='flex  justify-around h-full flex-col items-center'>
                                         {data.map((value) => {
                                             return (
+
                                                 <div onClick={() => Idselect(value.addres)} className='p-2 hover:bg-slate-400 w-full cursor-pointer'>
                                                     <p >{value.addres}</p>
                                                 </div>
@@ -161,7 +162,7 @@ const Order = () => {
                     </div>
                     <div className="flex-col justify-start items-start gap-2.5 inline-flex">
                         <div className="w-[108.64px] h-[13.83px] text-zinc-500 text-[15px] font-semibold font-['Syne']">Pickup date</div>
-                        <div className="w-[208.56px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
+                        <div className="w-[150px] md:w-[208.56px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
                             <div className="justify-start items-center gap-[9px] flex">
                                 <BsCalendarDate />
                                 <input defaultValue={currentDate} type='date' className="text-zinc-500 text-[10px] font-semibold font-['Syne'] outline-none bg-transparent" placeholder='Today, Dec 22' />
@@ -171,7 +172,7 @@ const Order = () => {
                     </div>
                     <div className="flex-col justify-start items-start gap-2.5 inline-flex">
                         <div className="w-[107.46px] h-[13.83px] text-zinc-500 text-[15px] font-semibold font-['Syne']">Pickup time</div>
-                        <div className="w-[198.29px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
+                        <div className="w-[150px] md:w-[198.29px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
 
                             <div className="justify-start items-center gap-[9px] flex">
                                 <IoTimeSharp />
