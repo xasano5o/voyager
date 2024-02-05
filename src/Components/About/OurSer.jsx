@@ -7,7 +7,7 @@ const OurSer = () => {
         <div>
             <div className="mt-12 w-full flex-col justify-start items-center gap-[89px] inline-flex">
                 <div className="text-center text-black text-[32px] font-semibold font-['Syne'] tracking-widest">OUR SEVICES</div>
-                <div className=" w-full md:h-[569px] justify-start items-start gap-[43px] grid grid-cols-1 md:inline-flex">
+                <div className=" w-full h-[1707px] md:h-[569px] justify-start items-start gap-[43px] grid grid-cols-1 md:inline-flex">
                     <div className=" self-stretch rounded-[20px] flex-col justify-start items-start gap-[35px] inline-flex">
                         <img className="self-stretch h-[300px] w-[312px]" src={restanle3} />
                         <div className="self-stretch grow shrink basis-0 flex-col justify-between items-start flex">

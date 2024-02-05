@@ -6,9 +6,9 @@ import { TiSocialTwitter } from "react-icons/ti";
 
 const Footer = () => {
     return (
-        <div className=' w-full bg-black h-fit'>
+        <div className='p-4 w-full bg-black h-fit'>
             <div className="md:mb-0 lg:pl-8 mt-4 w-full h-[88px] flex-col justify-start items-center gap-6 inline-flex">
-                <div className="self-stretch justify-start items-end gap-[51px] grid grid-cols-1 md:inline-flex">
+                <div className="md:pl-0 pl-4 self-stretch justify-start items-end gap-[51px] grid grid-cols-1 md:inline-flex">
                     <div className="grow shrink basis-0 flex-col justify-start items-start gap-6 inline-flex">
                         <img src={logo} alt="" className='bg-white' />
                         <div className="md:w-[514px] text-white text-[10px] font-normal font-['Syne'] tracking-tight">Sign up to be the first to find out when we add our latest offerings, exclusive amenities, and much more at<br />VOYAGER. We respect your privacy and will never share your information with any third-party vendors.</div>
@@ -21,9 +21,9 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="md:mt-0 mt-[180px] lg:pl-8 w-full md:h-[234px] flex-col justify-between items-center inline-flex">
-                <div className="self-stretch justify-between items-end grid-cols-1 grid md:inline-flex">
-                    <div className="w-[143px] flex-col justify-start items-start gap-[27px] inline-flex">
+            <div className=" lg:pl-8 w-full md:h-[234px] flex-col justify-between items-center inline-flex">
+                <div className=" self-stretch justify-between items-end grid-cols-1 grid md:inline-flex">
+                    <div className="md:pl-0 pl-4 md:mt-0 mt-[250px] w-[143px] flex-col justify-start items-start gap-[27px] inline-flex">
                         <div className="self-stretch text-white text-lg font-medium font-['Codec Pro']">Company</div>
                         <div className="self-stretch h-[158px] flex-col justify-start items-start gap-2.5 flex">
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">About</div>
@@ -34,7 +34,7 @@ const Footer = () => {
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">Help & FAQ</div>
                         </div>
                     </div>
-                    <div className="mt-12 md:mt-0 w-[127px] flex-col justify-start items-start gap-[27px] inline-flex">
+                    <div className="md:pl-0 pl-4 mt-12 md:mt-0 w-[127px] flex-col justify-start items-start gap-[27px] inline-flex">
                         <div className="self-stretch text-white text-lg font-medium font-['Codec Pro']">Explore</div>
                         <div className="self-stretch h-[158px] flex-col justify-start items-start gap-2.5 flex">
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">History</div>
@@ -45,7 +45,7 @@ const Footer = () => {
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">Cities</div>
                         </div>
                     </div>
-                    <div className="mt-12 md:mt-0 w-[200px] flex-col justify-start items-start gap-[27px] inline-flex">
+                    <div className="md:pl-0 pl-4 mt-12 md:mt-0 w-[200px] flex-col justify-start items-start gap-[27px] inline-flex">
                         <div className="self-stretch text-white text-lg font-medium font-['Codec Pro']">Business</div>
                         <div className="self-stretch h-[158px] flex-col justify-start items-start gap-2.5 flex">
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">Overview</div>
@@ -56,7 +56,7 @@ const Footer = () => {
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">DMC & Events</div>
                         </div>
                     </div>
-                    <div className="mt-12 md:mt-0 w-[260px] flex-col justify-start items-start gap-[27px] inline-flex">
+                    <div className=" md:pl-0 pl-4 mt-12 md:mt-0 w-[260px] flex-col justify-start items-start gap-[27px] inline-flex">
                         <div className="self-stretch text-white text-lg font-medium font-['Codec Pro']">Buses</div>
                         <div className="self-stretch h-[158px] flex-col justify-start items-start gap-2.5 flex">
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">Charters for Schools</div>
@@ -67,9 +67,9 @@ const Footer = () => {
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">Shuttle Services</div>
                         </div>
                     </div>
-                    <div className="mt-12 md:mt-0 md:mb-0 mb-8 w-[189px] flex-col justify-start items-start gap-[27px] inline-flex">
-                        <div className="self-stretch text-white text-lg font-medium font-['Codec Pro']">Contacts</div>
-                        <div className="self-stretch h-[158px] flex-col justify-start items-start gap-2.5 flex">
+                    <div className="md:pl-0 pl-4 mt-12 md:mt-0 md:mb-0 mb-8 w-[189px] flex-col justify-start items-start gap-[27px] inline-flex">
+                        <div className=" self-stretch text-white text-lg font-medium font-['Codec Pro']">Contacts</div>
+                        <div className=" self-stretch h-[158px] flex-col justify-start items-start gap-2.5 flex">
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">SALES</div>
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">sales@voyagercls.com</div>
                             <div className="self-stretch text-stone-300 text-sm font-normal font-['JUST Sans']">SUPPORT</div>
@@ -80,7 +80,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="lg:pl-8 md:w-[993px] md:h-[21px] justify-between items-center grid grid-cols-1 md:inline-flex">
+            <div className="md:pl-0 pl-4 lg:pl-8 md:w-[993px] md:h-[21px] justify-between items-center grid grid-cols-1 md:inline-flex">
                 <div className="md:w-[359px] justify-start items-center gap-[21px] md:flex flex-wrap">
                     <div className="text-stone-300 text-[10px] font-normal font-['JUST Sans']">Terms</div>
                     <div className="text-stone-300 text-[10px] font-normal font-['JUST Sans']">Partner Terms</div>
