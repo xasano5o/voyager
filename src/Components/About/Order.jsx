@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { FaSearch } from "react-icons/fa";
 import { BsCalendarDate } from "react-icons/bs";
 import { IoTimeSharp } from "react-icons/io5";
+import emailjs from '@emailjs/browser';
+
 import Modal from '../../generic/modal';
 const data = [
     {
@@ -39,10 +41,21 @@ const data = [
 const Order = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isDropdownOpe2, setDropdownOpen2] = useState(false);
-    const [activeButton, setActiveButton] = useState('One-way');
+    const [activeButton, setActiveButton] = useState('');
     const [addres, setAddres] = useState()
     const [modal, setModal] = useState(false)
-
+    const [email, setEmail] = useState({
+        supplier: '',
+        pickup_address: '',
+        dropoff_address: '',
+        pickup_date: '',
+        pickup_time: '',
+        first_name: '',
+        last_name: '',
+        phone_number: '',
+        email_addres: '',
+    })
+    const form = useRef();
 
     const handleInputChange = () => {
         setDropdownOpen(true);
@@ -64,23 +77,24 @@ const Order = () => {
     }
     const currentDate = new Date().toISOString().split('T')[0];
     const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false }).slice(0, 5);
-   
+
     const sendEmail = (e) => {
         e.preventDefault();
-    
+
         emailjs
-          .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, {
-            publicKey: 'YOUR_PUBLIC_KEY',
-          })
-          .then(
-            () => {
-              console.log('SUCCESS!');
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
-      };
+            .sendForm('service_xanc20q', 'template_9gfdd7j', form.current, {
+                publicKey: 'YrU2W-0Lv0jn5tlod',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+    };
+
     return (
         <div className='mt-12'>
             <div className="group-button" role="group">
@@ -118,7 +132,14 @@ const Order = () => {
                         <div className="w-[250.07px] h-[13.69px] text-zinc-500 text-[15px] font-semibold font-['Syne']">Pickup address</div>
                         <div className="w-[150px] md:w-[240.04px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
                             <FaSearch />
-                            <input value={addres} type="text" className="w-full outline-none text-zinc-500 text-[10px] font-semibold font-['Syne'] bg-transparent" placeholder='Pickup location'
+                            <input
+                                onChange={(e) =>
+                                    setEmail({
+                                        ...email,
+                                        pickup_address: e.target.value,
+                                    })
+                                }
+                                value={addres} type="text" className="w-full outline-none text-zinc-500 text-[10px] font-semibold font-['Syne'] bg-transparent" placeholder='Pickup location'
                                 onFocus={() => handleInputChange()}
                             />
 
@@ -130,9 +151,9 @@ const Order = () => {
                                         <h3 onClick={() => setDropdownOpen(false)} className='cursor-pointer'>✖︎</h3>
                                     </div>
                                     <div className='flex  justify-around h-full flex-col items-center'>
-                                        {data.map((value) => {
+                                        {data.map((value,index) => {
                                             return (
-                                                <div onClick={() => Idselect(value.addres)} className='p-2 hover:bg-slate-400 w-full cursor-pointer'>
+                                                <div key={index} onClick={() => Idselect(value.addres)} className='p-2 hover:bg-slate-400 w-full cursor-pointer'>
                                                     <p >{value.addres}</p>
                                                 </div>
                                             )
@@ -142,31 +163,34 @@ const Order = () => {
                             </div>
                         }
                     </div>
-                    {/* <div onClick={() =>closeFun()} className=' absolute top-0 left-0 right-0 bottom-0 z-10  h-[100vh]'>
 
-                    </div> */}
                     <div className=" flex-col justify-start items-start gap-2.5 inline-flex">
                         <div className="w-[146.43px] h-[13.69px] text-zinc-500 text-[15px] font-semibold font-['Syne']">Dropoff address</div>
 
                         <div onFocus={() => handleInputChange2()} className="w-[150px] md:w-[197.04px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
                             <FaSearch />
                             <input
+                                onChange={(e) =>
+                                    setEmail({
+                                        ...email,
+                                        dropoff_address: e.target.value,
+                                    })}
                                 value={addres}
                                 onFocus={() => handleInputChange2()}
                                 type="text" className="w-full outline-none text-zinc-500 text-[10px] font-semibold font-['Syne'] bg-transparent" placeholder='Dropoff location' />
 
                         </div>
                         {
-                            isDropdownOpe2 && <div className=' shadow-2xl rounded-sm absolute  top-[76px] left-[305px] ' closeModal={() => closeModal()}>
+                            isDropdownOpe2 && <div className=' shadow-2xl rounded-sm absolute  top-[76px] left-[305px] '>
                                 <div className='border p-2 overflow-y-scroll h-[180px] w-[198px]  bg-white'>
                                     <div className='flex  float-end p-1 '>
                                         <h3 onClick={() => setDropdownOpen2(false)} className='cursor-pointer'>✖︎</h3>
                                     </div>
                                     <div className='flex  justify-around h-full flex-col items-center'>
-                                        {data.map((value) => {
+                                        {data.map((value,index) => {
                                             return (
 
-                                                <div onClick={() => Idselect(value.addres)} className='p-2 hover:bg-slate-400 w-full cursor-pointer'>
+                                                <div key={index} onClick={() => Idselect(value.addres)} className='p-2 hover:bg-slate-400 w-full cursor-pointer'>
                                                     <p >{value.addres}</p>
                                                 </div>
                                             )
@@ -181,7 +205,13 @@ const Order = () => {
                         <div className="w-[150px] md:w-[208.56px] h-[38px] p-[9px] bg-gray-200 rounded-[5px] justify-start items-center gap-[9px] inline-flex">
                             <div className="justify-start items-center gap-[9px] flex">
                                 <BsCalendarDate />
-                                <input defaultValue={currentDate} type='date' className="text-zinc-500 text-[10px] font-semibold font-['Syne'] outline-none bg-transparent" placeholder='Today, Dec 22' />
+                                <input
+                                    onChange={(e) =>
+                                        setEmail({
+                                            ...email,
+                                            pickup_date: e.target.value,
+                                        })}
+                                    defaultValue={currentDate} type='date' className="text-zinc-500 text-[10px] font-semibold font-['Syne'] outline-none bg-transparent" placeholder='Today, Dec 22' />
                             </div>
 
                         </div>
@@ -192,50 +222,51 @@ const Order = () => {
 
                             <div className="justify-start items-center gap-[9px] flex">
                                 <IoTimeSharp />
-                                <input defaultValue={currentTime} type='time' className="text-zinc-500 text-[10px] font-semibold font-['Syne'] outline-none bg-transparent" placeholder='4:45 pm' />
+                                <input
+                                    onChange={(e) =>
+                                        setEmail({
+                                            ...email,
+                                            pickup_time: e.target.value,
+                                        })}
+                                    defaultValue={currentTime} type='time' className="text-zinc-500 text-[10px] font-semibold font-['Syne'] outline-none bg-transparent" placeholder='4:45 pm' />
                             </div>
                         </div>
                     </div>
+                    
                     <div className="w-[121px] h-[38px] px-[22px]  cursor-pointer  bg-black justify-center items-center  flex">
                         <div onClick={() => setModal(true)} className=" cur text-white text-[15px] font-semibold font-['Syne']">Show rides</div>
-
                     </div>
                     {modal &&
-                        <Modal className='  w-[500px] h-[500px] flex justify-end' closeModal={() => setModal(false)}>
-                            <div className=''>
-                                <form>
-                                    <div class="grid gap-6 mb-6 md:grid-cols-2">
-                                        <div>
-                                            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
-                                            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
-                                        </div>
-                                        <div>
-                                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name</label>
-                                            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
-                                        </div>
-
-                                        <div>
-                                            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-                                            <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
-                                        </div>
-
-                                        <div>
-                                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
-                                            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required />
-                                        </div>
+                        <Modal className='  w-[500px]  h-[500px] flex justify-end' closeModal={() => setModal(false)}>
+                            <form ref={form} onSubmit={sendEmail}>
+                                <div className='grid gap-6 mb-6 md:grid-cols-2'>
+                                    <div>
+                                        <label>Name</label>
+                                        <input type="text" name="user_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required />
                                     </div>
-                                </form>
-
-
-
-                            </div>
-
+                                    <div>
+                                        <label>Last Name</label>
+                                        <input type="text" name="last_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
+                                    </div>
+                                    <div>
+                                        <label>Email</label>
+                                        <input type="email" name="user_email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                    </div>
+                                    <div>
+                                        <label>Phone</label>
+                                        <input type="tel" name="user_phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                    </div>
+                                    <div></div>
+                                    <input type="submit" value="Send" className='disabled:bg-gray-300 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center justify-center' />
+                                </div>
+                            </form>
                         </Modal>
+
                     }
 
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
