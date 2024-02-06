@@ -39,7 +39,7 @@
     }
 }
 
-.rotate-390line {
+.rotate-360line2 {
     animation: rotates 4s ease-in 1s 3;
 }
 
@@ -126,13 +126,22 @@
     }
 
     .rotate-360 {
-        left: 200px;
-        top: 20px;
+        left: 155px;
+        top:20px;
+        width: 80px;
     }
 
-    .rotate-360line {
-        right: 330px;
-        top: 20px;
+    .rotate-360line2 {
+        left: 2px !important;
+        top: 23px !important;
+        width: 82px !important;
+        z-index: 10 !important;
     }
 
+    .mobile-tex{
+        font-size: 14px !important;
+    }
+    .mobile-texp{
+        font-size: 11px !important;
+    }
 }
