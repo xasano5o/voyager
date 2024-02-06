@@ -1,3 +1,4 @@
+import ScrollAnimation from 'react-animate-on-scroll'
 import Footer from '../footer/Footer'
 import Busisnes from './Busisnes'
 import CaruselNav from './Carusel'
@@ -11,8 +12,8 @@ const AboutCom = () => {
     <div className='container mx-auto'>
       <CaruselNav />
       <Order />
-      <EXPERIENCE />
-      <OurSer />
+        <EXPERIENCE />
+        <OurSer />
       <Busisnes />
       <Logoes />
       <Footer />
